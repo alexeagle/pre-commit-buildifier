@@ -36,7 +36,7 @@ readonly sha="${!sha_accessor}"
 mkdir -p "$binary_dir"
 tmp_binary=$(mktemp)
 
-if ! curl --fail --location --retry 5 --retry-connrefused --silent --output "$tmp_binary" "$url"; then
+if ! curl --fail --location --retry 5 --retry-connrefused --output "$tmp_binary" "$url"; then
   echo "error: failed to download buildifier" >&2
   exit 1
 fi
